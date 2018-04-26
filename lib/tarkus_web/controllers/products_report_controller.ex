@@ -2,8 +2,8 @@ defmodule TarkusWeb.ProductsReportController do
   use TarkusWeb, :controller
 
   def index(conn, %{"content" => content}) do
-    IO.inspect content
+    msg = Tarkus.ProductsReportJob.report(content)
 
-    render(conn, "index.json", msg: content)
+    render(conn, "index.json", msg: "#{msg} --> #{content}")
   end
 end
