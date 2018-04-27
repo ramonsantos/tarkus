@@ -7,7 +7,7 @@ defmodule Tarkus.ProductsReportJob do
     GenServer.start_link(__MODULE__, state, name: __MODULE__)
   end
 
-  def report (content) do
+  def report(content) do
     GenServer.call(__MODULE__, {:report, content})
   end
 
