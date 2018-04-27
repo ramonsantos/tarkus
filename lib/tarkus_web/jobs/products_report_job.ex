@@ -16,7 +16,7 @@ defmodule Tarkus.ProductsReportJob do
   end
 
   defp send_email(content) do
-    Tarkus.Email.send("ramonsantos.pe@gmail.com", content)
-    |> Tarkus.Mailer.deliver_now
+    Tarkus.ReportEmail.send("ramonsantos.pe@gmail.com", content)
+    |> Tarkus.Mailer.deliver_later
   end
 end
