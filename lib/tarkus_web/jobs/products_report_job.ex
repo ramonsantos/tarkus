@@ -18,6 +18,7 @@ defmodule Tarkus.ProductsReportJob do
   end
 
   defp send_email(content) do
-    IO.puts "\n>>> send-email  - #{:os.system_time}\n======== #{content}"
+    Tarkus.Email.send("ramonsantos.pe@gmail.com", content)
+    |> Tarkus.Mailer.deliver_now
   end
 end

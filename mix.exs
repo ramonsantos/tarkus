@@ -35,6 +35,7 @@ defmodule Tarkus.Mixfile do
       {:phoenix, "~> 1.3.2"},
       {:phoenix_pubsub, "~> 1.0"},
       {:gettext, "~> 0.11"},
+      {:bamboo_smtp, "~> 1.4.0"},
       {:cowboy, "~> 1.0"}
     ]
   end
