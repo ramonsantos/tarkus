@@ -12,9 +12,7 @@ defmodule Tarkus.ProductsReportJob do
   end
 
   def handle_call({:report, content}, _from, state) do
-    send_email(content)
-
-    {:reply, "E-mail enviado!", state}
+    {:reply, send_email(content), state}
   end
 
   defp send_email(content) do

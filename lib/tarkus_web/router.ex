@@ -8,6 +8,6 @@ defmodule TarkusWeb.Router do
   scope "/api", TarkusWeb do
     pipe_through :api
 
-    get "/report", ProductsReportController, :index
+    post "/report", ProductsReportController, :index
   end
 end
