@@ -20,6 +20,7 @@ import_config "#{Mix.env}.exs"
 # Configures the mailer
 config :tarkus, Tarkus.Mailer,
   adapter: Bamboo.SMTPAdapter,
+  adapter: Bamboo.TestAdapter,
   server: "smtp.gmail.com",
   port: 587,
   username: System.get_env("USERNAME"),
