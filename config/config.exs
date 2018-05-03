@@ -13,19 +13,19 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
-
 # Configures the mailer
 config :tarkus, Tarkus.Mailer,
   adapter: Bamboo.SMTPAdapter,
-  adapter: Bamboo.TestAdapter,
   server: "smtp.gmail.com",
   port: 587,
-  username: System.get_env("USERNAME"),
-  password: System.get_env("PASSWORD"),
   tls: :if_available,
   allowed_tls_versions: [:"tlsv1", :"tlsv1.1", :"tlsv1.2"],
   ssl: false,
   retries: 1
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env}.exs"
+
+# Secret keys
+import_config "app.secret.exs"

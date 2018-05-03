@@ -8,3 +8,7 @@ config :tarkus, TarkusWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Mailer test adapter
+config :tarkus, Tarkus.Mailer,
+  adapter: Bamboo.TestAdapter

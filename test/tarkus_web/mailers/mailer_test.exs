@@ -15,6 +15,6 @@ defmodule Tarkus.MailerTest do
 
   test "is sending e-mail" do
     email_report = Tarkus.ReportEmail.send(@recipient, @csv_content)
-    assert_delivered_email Tarkus.Mailer.deliver_later(email_report)
+    assert_delivered_email Tarkus.Mailer.deliver_now(email_report)
   end
 end
