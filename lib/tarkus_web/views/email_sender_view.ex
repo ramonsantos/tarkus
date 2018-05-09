@@ -1,4 +1,4 @@
-defmodule TarkusWeb.ProductsReportView do
+defmodule TarkusWeb.EmailSenderView do
   use TarkusWeb, :view
 
   def render("index.json", %{msg: msg}) do

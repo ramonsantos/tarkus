@@ -1,4 +1,4 @@
-defmodule Tarkus.ReportEmail do
+defmodule Tarkus.GenericEmail do
   import Bamboo.Email
 
   def send(recipient, msg) do

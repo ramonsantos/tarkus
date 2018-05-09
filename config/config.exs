@@ -28,4 +28,4 @@ config :tarkus, Tarkus.Mailer,
 import_config "#{Mix.env}.exs"
 
 # Secret keys
-import_config "app.secret.exs"
+import_config "#{Mix.env}.secret.exs"

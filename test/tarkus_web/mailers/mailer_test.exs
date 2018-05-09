@@ -6,15 +6,15 @@ defmodule Tarkus.MailerTest do
   @csv_content "csv content..."
 
   test "report e-mail" do
-    email_report = Tarkus.ReportEmail.send(@recipient, @csv_content)
+    email = Tarkus.GenericEmail.send(@recipient, @csv_content)
 
-    assert email_report.to == @recipient
-    assert email_report.subject == "Products Report"
-    assert email_report.text_body =~ "csv content"
+    assert email.to == @recipient
+    assert email.subject == "Products Report"
+    assert email.text_body =~ "csv content"
   end
 
   test "is sending e-mail" do
-    email_report = Tarkus.ReportEmail.send(@recipient, @csv_content)
-    assert_delivered_email Tarkus.Mailer.deliver_now(email_report)
+    email = Tarkus.GenericEmail.send(@recipient, @csv_content)
+    assert_delivered_email Tarkus.Mailer.deliver_now(email)
   end
 end

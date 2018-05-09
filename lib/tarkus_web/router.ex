@@ -5,9 +5,9 @@ defmodule TarkusWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", TarkusWeb do
+  scope "/", TarkusWeb do
     pipe_through :api
 
-    post "/report", ProductsReportController, :index
+    post "/send", EmailSenderController, :index
   end
 end

@@ -1,9 +1,8 @@
-defmodule Tarkus.ProductsReportJobTest do
+defmodule Tarkus.EmailSenderJobTest do
   use ExUnit.Case, async: true
-  require IEx
 
-  test "spawns buckets" do
-    resp = Tarkus.ProductsReportJob.report("csv content...")
+  test "sending emai" do
+    resp = Tarkus.EmailSenderJob.send_email("csv content...")
 
     assert is_map(resp)
     assert resp.html_body =~ "content"
